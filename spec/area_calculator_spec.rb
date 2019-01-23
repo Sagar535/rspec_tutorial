@@ -43,4 +43,15 @@ describe AreaCalculator do
 			expect(@areaCalc.double(area)).to be > @areaCalc.circle(2)
 		end
 	end
+
+	context "check the class type matcher" do
+		it "areacalc should be instance of AreaCalculator" do
+			expect(@areaCalc).to be_instance_of AreaCalculator
+		end
+
+		it "area should be kind of number" do
+			expect(@areaCalc.circle(2)).to be_kind_of Numeric
+		end
+	end
+
 end 
