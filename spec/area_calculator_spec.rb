@@ -70,4 +70,15 @@ describe "AreaCalculatorRectangle area calculations", :rectangle => true do
 		end
 	end
 
+	context "when metadata is provided for length and breadth", :length => 2, :breadth => 2 do 
+		it "should return the correct area" do |example|
+			rectangle1 = double('rectangle')
+			allow(rectangle1).to receive(:length) { example.metadata[:length] }
+			allow(rectangle1).to receive(:breadth) { example.metadata[:breadth] }
+			
+			areaCalc = AreaCalculatorRectangle.new(rectangle1)
+			expect(areaCalc.rectangle).to eq 4
+		end
+	end
+
 end
