@@ -57,7 +57,7 @@ describe "AreaCalculator circle area calculations" do
 
 end 
 
-describe "AreaCalculatorRectangle area calculations" do
+describe "AreaCalculatorRectangle area calculations", :rectangle => true do
 	# lets assume our AreaCalculator class depends on Rectangle class, Square class to calculate area for those
 	context "when the valid length and breadth is provided" do 
 		it "should return correct area" do
