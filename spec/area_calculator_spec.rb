@@ -1,6 +1,7 @@
 require 'area_calculator'
+require 'area_calculator_rectangle'
 
-describe AreaCalculator do
+describe "AreaCalculator circle area calculations" do
 	before(:each) do 
 		@areaCalc = AreaCalculator.new
 	end
@@ -55,3 +56,18 @@ describe AreaCalculator do
 	end
 
 end 
+
+describe "AreaCalculatorRectangle area calculations" do
+	# lets assume our AreaCalculator class depends on Rectangle class, Square class to calculate area for those
+	context "when the valid length and breadth is provided" do 
+		it "should return correct area" do
+			rectangle1 = double('rectangle')
+			allow(rectangle1).to receive(:length) { 2 }
+			allow(rectangle1).to receive(:breadth) { 2 }
+
+			areaCalc = AreaCalculatorRectangle.new(rectangle1)
+			expect(areaCalc.rectangle).to eq 4			
+		end
+	end
+
+end
